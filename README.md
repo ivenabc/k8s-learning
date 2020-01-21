@@ -5,6 +5,7 @@ sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
 sudo chown $(id -u):$(id -g) $HOME/.kube/config
 ```
 
+---
 
 1 node(s) had taints that the pod didn't tolerate.
 有时候一个pod创建之后一直是pending，没有日志，也没有pull镜像，describe的时候发现里面有一句话： 1 node(s) had taints that the pod didn't tolerate.
@@ -13,3 +14,7 @@ sudo chown $(id -u):$(id -g) $HOME/.kube/config
 ```
 kubectl taint nodes --all node-role.kubernetes.io/master-
 ```
+
+--- 
+
+kubectl create apply replace三者区别
